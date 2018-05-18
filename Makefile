@@ -1,7 +1,7 @@
 # docker-grafana-graphite makefile
 
 # Environment Varibles
-CONTAINER = kamon-grafana-dashboard
+CONTAINER = grafana
 
 .PHONY: up
 
@@ -22,6 +22,12 @@ up : prep pull
 
 down :
 	docker-compose down
+
+start :
+	docker-compose start
+
+stop :
+	docker-compose stop
 
 shell :
 	docker exec -ti $(CONTAINER) /bin/bash
